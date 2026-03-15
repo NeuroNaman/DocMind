@@ -24,7 +24,7 @@ if __name__ == '__main__':
         "app:app",
         host="0.0.0.0",
         port=port,
-        reload=debug,
+        reload=Flase,
         reload_dirs=["app"],
         reload_excludes=["*.pyc", "__pycache__"]
     )
