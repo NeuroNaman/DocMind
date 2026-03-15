@@ -1,467 +1,446 @@
-# AutoDocThinker: Agentic RAG System with Intelligent Search Engine
+<div align="center">
 
-[![Python](https://img.shields.io/badge/python-3.11-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org) [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![LangChain](https://img.shields.io/badge/🦜_LangChain-000000?style=for-the-badge)](https://python.langchain.com/) [![LangGraph](https://img.shields.io/badge/LangGraph-1C1C1C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph/) [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/) [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/) [![ChromaDB](https://img.shields.io/badge/ChromaDB-000000?style=for-the-badge&logo=chromadb&logoColor=white)](https://www.trychroma.com/) [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![Groq](https://img.shields.io/badge/Groq-000000?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com/)
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=42&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=DocMind+🧠;Agentic+RAG+System;Ask+Your+Documents+Anything;10x+Productivity.+Zero+Information+Overload." alt="DocMind Typing SVG" />
 
-**AutoDocThinker** is an advanced **Agentic RAG (Retrieval-Augmented Generation)** system designed to bridge the gap between static documents and dynamic intelligence, solving the critical problem of information overload in data-rich environments. By leveraging a **Monolithic Agentic Architecture** built with **FastAPI, LangGraph, and ChromaDB**, the system transforms unstructured data (PDFs, Word docs, Web URLs) into an interactive knowledge base, enabling users to query complex information using natural language. Unlike traditional keyword search that fails to understand context, AutoDocThinker utilizes a **multi-agent workflow** to intelligently parse, chunk, and embed documents, then proactively routes queries between a **Vector Retriever** for precise evidence and a **Wikipedia Fallback Agent** for broader context when internal data is insufficient. This end-to-end solution not only automates research and Level-1 support tasks but also delivers **10x productivity gains** by synthesizing accurate, citation-backed answers in seconds, effectively turning a repository of "dead" files into an active, decision-driving organizational brain.
+<br/>
 
-[![Project demo video](https://github.com/user-attachments/assets/e2e9f89e-2d74-4004-8c9e-db0762f5cbb9)](https://github.com/user-attachments/assets/e2e9f89e-2d74-4004-8c9e-db0762f5cbb9)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://doc-mind.vercel.app)
+[![Backend API](https://img.shields.io/badge/⚡_Backend-HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://namannanda-docmind-backend.hf.space)
+[![API Docs](https://img.shields.io/badge/📖_Swagger_Docs-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://namannanda-docmind-backend.hf.space/docs)
 
-![Project Screenshot](https://github.com/user-attachments/assets/1bb535ad-b2d4-4a1e-ba6f-3c728b2d391e)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![LangChain](https://img.shields.io/badge/🦜_LangChain-000000?style=flat-square)](https://python.langchain.com)
+[![LangGraph](https://img.shields.io/badge/LangGraph-1C1C1C?style=flat-square&logo=langchain&logoColor=white)](https://langchain-ai.github.io/langgraph)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org)
+[![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square)](https://www.trychroma.com)
+[![Groq](https://img.shields.io/badge/Groq_LLaMA_3_70B-F55036?style=flat-square)](https://groq.com)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
----
+<br/>
 
-## **Live Demo**
+> **Stop searching. Start asking.**
+> DocMind is an **Agentic RAG system** that turns static documents into a living, queryable knowledge base. A **7-agent LangGraph pipeline** autonomously parses, embeds, retrieves, and generates accurate, citation-backed answers — delivering **10x productivity gains** over manual search.
 
-**Try it now**: [AutoDocThinker: Agentic RAG System with Intelligent Search Engine](https://autodocthinker.onrender.com/)
+<br/>
 
----
+![DocMind Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,14,20&height=130&section=header)
 
-## **Features & Functionalities**
+</div>
 
-| #  | Module               | Technology Stack             | Implementation Details                   |
-|----|----------------------|------------------------------|------------------------------------------|
-| 1  | **Backend Framework**| FastAPI + Uvicorn            | Async support, auto OpenAPI docs         |
-| 2  | **LLM Processing**   | Groq + LLaMA-3-70B           | Configurable temperature and model       |
-| 3  | **Document Parsing** | PyMuPDF + python-docx        | PDF, DOCX, TXT with metadata preservation|
-| 4  | **Text Chunking**    | RecursiveCharacterTextSplitter| Configurable chunk size and overlap     |
-| 5  | **Vector Embeddings**| all-MiniLM-L6-v2             | Efficient 384-dimensional embeddings    |
-| 6  | **Vector Database**  | ChromaDB                     | Persistent storage with similarity search|
-| 7  | **Agent Workflow**   | LangGraph                    | 7 specialized agents with routing       |
-| 8  | **Web Fallback**     | Wikipedia API                | Auto-triggered when no documents         |
-| 9  | **User Interface**   | HTML, CSS, JavaScript        | Modern responsive design                 |
-| 10 | **Containerization** | Docker + Docker Compose      | Production-ready deployment             |
 
----
+<div align="center">
 
-## **Project Structure**
 
-```
-AutoDocThinker/
-├── .github/
-│   ├── workflows/
-│   │   ├── ci-cd.yml
-│   │   ├── docker.yml
-│   │   ├── main.yml
-|   |
-├── backend/                          # Backend application (FastAPI)
-│   ├── .env.example                  # Environment variables template
-│   ├── Dockerfile                    # Backend Docker
-│   ├── .dockerignore
-│   ├── pyproject.toml
-│   ├── requirements.txt              # Python dependencies
-│   ├── run.py
-│   ├── setup.py
-│   ├── app/                          # Main application package
-│   │   ├── config.py                 # Application configuration
-│   │   ├── exceptions.py
-│   │   ├── __init__.py               # App factory & initialization
-│   │   ├── agents/                   # Agent implementations
-│   │   │   ├── base.py               # Base agent class
-│   │   │   ├── executor.py           # Final response formatter
-│   │   │   ├── fallback.py           # Wikipedia fallback agent
-│   │   │   ├── ingestion.py          # Document ingestion agent
-│   │   │   ├── llm_answer.py         # LLM response generation
-│   │   │   ├── planner.py            # Execution planner
-│   │   │   ├── retriever.py          # Document retriever
-│   │   │   ├── tool_router.py        # Tool routing logic
-│   │   │   ├── __init__.py
-│   │   ├── api/                      # API endpoints
-│   │   │   ├── routes.py             # Main API routes
-│   │   │   ├── __init__.py
-│   │   ├── core/                     # Core business logic
-│   │   │   ├── models.py             # Pydantic models
-│   │   │   ├── state.py              # State management
-│   │   │   ├── __init__.py
-│   │   ├── services/                 # External services
-│   │   │   ├── embedding_service.py  # Embedding generation
-│   │   │   ├── llm_service.py        # LLM interaction
-│   │   │   ├── vector_store.py       # Vector DB interface
-│   │   │   ├── wikipedia_service.py
-│   │   │   ├── __init__.py
-│   │   ├── tools/                    # Helper tools
-│   │   │   ├── document_loader.py    # Document loading logic
-│   │   │   ├── text_splitter.py
-│   │   │   ├── __init__.py
-│   │   ├── utils/                    # Utilities
-│   │   │   ├── logger.py             # Logging configuration
-│   │   │   ├── validators.py
-│   │   │   ├── __init__.py
-│   │   ├── workflow/                 # Workflow orchestration
-│   │   │   ├── edges.py
-│   │   │   ├── graph.py              # LangGraph workflow definition
-│   │   │   ├── __init__.py
-│   ├── data/
-│   │   ├── (Sample documents)
-│   ├── logs/
-│   │   ├── app.log                   # Application logs
-│   ├── notebooks/
-│   │   ├── experiment.ipynb
-│   ├── tests/                        # Test suite
-│   │   ├── conftest.py               # Test fixtures
-│   │   ├── test_app.py
-│   │   ├── test_coverage_improvements.py
-│   │   ├── test_exceptions.py        # Exception handling tests
-│   │   ├── __init__.py
-│   │   ├── test_agents/              # Agent logic tests
-│   │   │   ├── test_base.py
-│   │   │   ├── test_executor.py
-│   │   │   ├── test_fallback.py
-│   │   │   ├── test_ingestion.py
-│   │   │   ├── test_llm_answer.py
-│   │   │   ├── test_planner.py
-│   │   │   ├── test_retriever.py
-│   │   │   ├── test_tool_router.py
-│   │   │   ├── __init__.py
-│   │   ├── test_api/                 # API endpoint tests
-│   │   │   ├── test_routes.py
-│   │   │   ├── __init__.py
-│   │   ├── test_core/                # Core model tests
-│   │   │   ├── test_models.py
-│   │   │   ├── __init__.py
-│   │   ├── test_services/            # External service tests
-│   │   │   ├── test_embedding_service.py
-│   │   │   ├── test_llm_service.py
-│   │   │   ├── test_vector_store.py
-│   │   │   ├── test_wikipedia_service.py
-│   │   │   ├── __init__.py
-│   │   ├── test_tools/               # Helper tool tests
-│   │   │   ├── test_document_loader.py
-│   │   │   ├── test_text_splitter.py
-│   │   │   ├── __init__.py
-│   │   ├── test_utils/               # Utility function tests
-│   │   │   ├── test_logger.py
-│   │   │   ├── test_validators.py
-│   │   │   ├── __init__.py
-│   │   ├── test_workflow/            # Workflow graph tests
-│   │   │   ├── test_edges.py
-│   │   │   ├── test_graph.py
-│   │   │   ├── __init__.py
-│   ├── uploads/
-│   │   ├── (User uploads)
-│   ├── vector_db/
-│   │   ├── (ChromaDB files)
-│
-├── frontend/                         # Frontend application (React)
-│   ├── .gitignore
-│   ├── .dockerignore
-│   ├── Dockerfile                    # Frontend Docker configuration
-│   ├── eslint.config.js
-│   ├── index.html                    # Entry HTML file
-│   ├── package-lock.json
-│   ├── package.json                  # Node.js dependencies
-│   ├── postcss.config.js
-│   ├── README.md
-│   ├── tailwind.config.js            # Tailwind CSS configuration
-│   ├── vite.config.js                # Vite configuration
-│   ├── public/
-│   │   ├── vite.svg
-│   ├── src/
-│   │   ├── App.css
-│   │   ├── App.jsx                   # Main React component
-│   │   ├── index.css                 # Global styles
-│   │   ├── main.jsx                  # React entry point
-│   │   ├── assets/
-│   │   │   ├── react.svg
-│
-├── .gitignore
-├── docker-compose.yml                # Docker Compose orchestration
-├── LICENSE
-├── Demo.png
-├── Demo.mp4
-├── README.md
-├── render.yml
-├── run.py                            # Main project entry point
-```
+| 🌐 Frontend | ⚡ Backend API | 📖 API Docs |
+|---|---|---|
+| [doc-mind.vercel.app](https://doc-mind.vercel.app) | [HuggingFace Space](https://namannanda-docmind-backend.hf.space) | [Swagger UI](https://namannanda-docmind-backend.hf.space/docs) |
+
+</div>
 
 ---
 
-## **Architecture Pattern: Monolithic Agentic Architecture**
+## ✨ What is DocMind?
 
-This project follows a **Monolithic Agentic Architecture** with the following design patterns:
+DocMind bridges the gap between **static documents** and **dynamic intelligence**. Traditional keyword search fails to understand context — DocMind doesn't.
 
-| Pattern | Where Used | Purpose |
-|---------|------------|---------|
-| **App Factory** | `app/__init__.py` | Configurable FastAPI app creation |
-| **Singleton** | `services/*.py` | Single instance of shared services |
-| **Template Method** | `agents/base.py` | Common agent interface |
-| **Strategy** | `agents/*.py` | Different agent behaviors |
-| **State Machine** | `workflow/graph.py` | LangGraph state transitions |
-| **Repository** | `services/vector_store.py` | Data access abstraction |
-| **Dependency Injection** | `config.py` | Environment-based configuration |
+Built on a **Monolithic Agentic Architecture** using FastAPI, LangGraph, and ChromaDB, DocMind intelligently parses, chunks, and semantically embeds your documents. It then routes natural language queries through a pipeline of 7 specialized agents that reason, retrieve, and respond — proactively switching between a **Vector Retriever** for precise in-document evidence and a **Wikipedia Fallback Agent** when internal data falls short.
+
+Whether you're automating research, powering Level-1 support bots, or extracting insights from hundreds of files — DocMind transforms a repository of "dead" documents into an **active, decision-driving organizational brain**.
 
 ---
 
-## **System Architecture**
+## 🚀 Features & Capabilities
+
+| # | Module | Technology | Details |
+|---|---|---|---|
+| 1 | **Backend Framework** | FastAPI + Uvicorn | Async support, auto OpenAPI docs |
+| 2 | **LLM Processing** | Groq + LLaMA-3-70B | Configurable temperature & model |
+| 3 | **Document Parsing** | PyMuPDF + python-docx | PDF, DOCX, TXT with metadata |
+| 4 | **Text Chunking** | RecursiveCharacterTextSplitter | Configurable chunk size & overlap |
+| 5 | **Vector Embeddings** | all-MiniLM-L6-v2 | 384-dimensional semantic embeddings |
+| 6 | **Vector Database** | ChromaDB | Persistent similarity search |
+| 7 | **Agent Workflow** | LangGraph | 7 specialized agents with routing |
+| 8 | **Web Fallback** | Wikipedia API | Auto-triggered on missing context |
+| 9 | **User Interface** | React + TailwindCSS | Modern responsive SPA |
+| 10 | **Containerization** | Docker + Docker Compose | Production-ready deployment |
+
+---
+
+## 🏗️ System Architecture
 
 ```mermaid
 graph TD
-    A[User Interface]:::ui -->|Upload/Query| B[FastAPI Server]:::server
+    A[User Interface - React]:::ui -->|Upload / Query| B[FastAPI Server]:::server
     B --> C[Tool Router Agent]:::router
-    C -->|File/URL/Text| D[Ingestion Agent]:::processor
-    
-    D --> E[Document Loader]:::loader
-    E --> F[Text Splitter]:::splitter
+    C -->|File / URL / Text| D[Ingestion Agent]:::processor
+
+    D --> E[Document Loader - PyMuPDF / python-docx]:::loader
+    E --> F[RecursiveCharacterTextSplitter]:::splitter
     F --> G[ChromaDB Vector Store]:::database
-    
+
     D --> H[Planner Agent]:::planner
     H -->|Has Documents| I[Retriever Agent]:::retriever
     H -->|No Documents| J[Fallback Agent]:::fallback
-    
+
     I --> G
-    G --> K[LLM Answer Agent]:::llm
+    G --> K[LLM Answer Agent - Groq LLaMA-3-70B]:::llm
     J --> L[Wikipedia API]:::api
     L --> K
-    
+
     K --> M[Executor Agent]:::executor
     M --> B
     B --> A
 
-    classDef ui fill:#4e79a7,color:white;
-    classDef server fill:#f28e2b,color:white;
-    classDef router fill:#e15759,color:white;
-    classDef processor fill:#76b7b2,color:white;
-    classDef loader fill:#59a14f,color:white;
-    classDef splitter fill:#edc948,color:#333;
-    classDef database fill:#8cd17d,color:#333;
-    classDef planner fill:#499894,color:white;
-    classDef retriever fill:#86bcb6,color:#333;
-    classDef fallback fill:#f1ce63,color:#333;
-    classDef llm fill:#d37295,color:white;
-    classDef api fill:#a0d6e5,color:#333;
-    classDef executor fill:#b3b3b3,color:#333;
+    classDef ui fill:#4e79a7,color:white
+    classDef server fill:#f28e2b,color:white
+    classDef router fill:#e15759,color:white
+    classDef processor fill:#76b7b2,color:white
+    classDef loader fill:#59a14f,color:white
+    classDef splitter fill:#edc948,color:#333
+    classDef database fill:#8cd17d,color:#333
+    classDef planner fill:#499894,color:white
+    classDef retriever fill:#86bcb6,color:#333
+    classDef fallback fill:#f1ce63,color:#333
+    classDef llm fill:#d37295,color:white
+    classDef api fill:#a0d6e5,color:#333
+    classDef executor fill:#b3b3b3,color:#333
 ```
 
 ---
 
-## **Installation**
+## 🧩 Design Patterns
+
+| Pattern | Location | Purpose |
+|---|---|---|
+| **App Factory** | `app/__init__.py` | Configurable FastAPI app instantiation |
+| **Singleton** | `services/*.py` | Single shared instances of LLM, embeddings & vector store |
+| **Template Method** | `agents/base.py` | Common interface across all agents |
+| **Strategy** | `agents/*.py` | Swappable, independent agent behaviors |
+| **State Machine** | `workflow/graph.py` | LangGraph state transitions & conditional routing |
+| **Repository** | `services/vector_store.py` | Abstracted data access layer |
+| **Dependency Injection** | `config.py` | Environment-driven configuration |
+
+---
+
+## 🛠️ Technology Stack
+
+<div align="center">
+
+| Layer | Technologies |
+|---|---|
+| **Frontend** | ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) |
+| **Backend** | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Uvicorn](https://img.shields.io/badge/Uvicorn-4B0082?style=flat-square) ![Python 3.11](https://img.shields.io/badge/Python_3.11-3776AB?style=flat-square&logo=python&logoColor=white) |
+| **AI / Agents** | ![LangChain](https://img.shields.io/badge/🦜_LangChain-000000?style=flat-square) ![LangGraph](https://img.shields.io/badge/LangGraph-1C1C1C?style=flat-square) ![Groq](https://img.shields.io/badge/Groq_LLaMA_3_70B-F55036?style=flat-square) |
+| **Embeddings** | ![HuggingFace](https://img.shields.io/badge/all--MiniLM--L6--v2-FFD21E?style=flat-square&logo=huggingface&logoColor=black) ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) |
+| **Vector DB** | ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) ![HuggingFace Spaces](https://img.shields.io/badge/HF_Spaces-FFD21E?style=flat-square&logo=huggingface&logoColor=black) |
+
+</div>
+
+---
+
+## 📁 Project Structure
+
+```
+DocMind/
+│
+├── 📂 .github/workflows/
+│   ├── ⚙️  ci-cd.yml               # Full CI/CD pipeline
+│   └── 🐳 docker.yml               # Docker build & push to GHCR
+│
+├── 📂 backend/
+│   ├── 📂 app/
+│   │   ├── 🤖 agents/
+│   │   │   ├── base.py             # Base agent class (Template Method)
+│   │   │   ├── executor.py         # Final response formatter
+│   │   │   ├── fallback.py         # Wikipedia fallback agent
+│   │   │   ├── ingestion.py        # Document ingestion agent
+│   │   │   ├── llm_answer.py       # LLM response generation
+│   │   │   ├── planner.py          # Execution planner
+│   │   │   ├── retriever.py        # Semantic retriever agent
+│   │   │   └── tool_router.py      # Input routing logic
+│   │   │
+│   │   ├── 🌐 api/
+│   │   │   └── routes.py           # FastAPI route handlers
+│   │   │
+│   │   ├── ⚙️  core/
+│   │   │   ├── models.py           # Pydantic data models
+│   │   │   └── state.py            # LangGraph state management
+│   │   │
+│   │   ├── 🔧 services/
+│   │   │   ├── embedding_service.py
+│   │   │   ├── llm_service.py
+│   │   │   ├── vector_store.py
+│   │   │   └── wikipedia_service.py
+│   │   │
+│   │   ├── 🛠️  tools/
+│   │   │   ├── document_loader.py  # PDF / DOCX / TXT / URL loader
+│   │   │   └── text_splitter.py    # Recursive chunking logic
+│   │   │
+│   │   ├── 📊 utils/
+│   │   │   ├── logger.py           # Rotating structured logger
+│   │   │   └── validators.py
+│   │   │
+│   │   └── 🔄 workflow/
+│   │       ├── edges.py            # Conditional routing edges
+│   │       └── graph.py            # LangGraph pipeline definition
+│   │
+│   ├── 🧪 tests/                   # 100% coverage test suite
+│   │   ├── test_agents/
+│   │   ├── test_api/
+│   │   ├── test_core/
+│   │   ├── test_services/
+│   │   ├── test_tools/
+│   │   ├── test_utils/
+│   │   └── test_workflow/
+│   │
+│   ├── 📓 notebooks/experiment.ipynb
+│   ├── 🐳 Dockerfile
+│   └── 📋 requirements.txt
+│
+├── 📂 frontend/
+│   ├── 📂 src/
+│   │   ├── App.jsx                 # Main React component
+│   │   └── main.jsx                # React entry point
+│   ├── 🐳 Dockerfile
+│   ├── 📦 package.json
+│   └── ⚡ vite.config.js
+│
+├── 🐳 docker-compose.yml
+├── ⚙️  render.yml
+└── 📖 README.md
+```
+
+---
+
+## ⚡ Quick Start
 
 ### Prerequisites
 
 - Python 3.11+
-- Groq API Key
+- Node.js 18+
+- A free [Groq API key](https://console.groq.com)
 
-### Using pip
+### 1️⃣ Clone the Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/Md-Emon-Hasan/AutoDocThinker.git
-cd AutoDocThinker
+git clone https://github.com/NeuroNaman/DocMind.git
+cd DocMind
+```
 
-# Create virtual environment
+### 2️⃣ Backend Setup
+
+```bash
+# Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate          # macOS / Linux
+# venv\Scripts\activate           # Windows
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 
-# Copy and configure environment
-cp .env.example .env
-# Edit .env with your API keys
-
-# Run the application
-python run.py
+# Configure environment
+cp backend/.env.example backend/.env
+# Edit .env and add your Groq API key
 ```
 
-### Using Docker
+**`.env` reference:**
 
-The project includes a **Root Multi-stage Dockerfile** that builds both the React frontend and the FastAPI backend into a single container.
+```env
+GROQ_API_KEY=your_groq_api_key_here
+APP_ENV=development
+LLM_MODEL=llama3-70b-8192
+EMBEDDING_MODEL=all-MiniLM-L6-v2
+CHUNK_SIZE=1000
+CHUNK_OVERLAP=200
+RETRIEVAL_K=3
+```
 
 ```bash
-# RECOMMENDED: Build and run with Docker Compose
-docker-compose up -d --build
-
-# OR: Build the root Docker image manually
-docker build -t auto-doc-thinker .
-
-# Run the container
-docker run -p 5000:5000 --env-file .env auto-doc-thinker
+python backend/run.py
 ```
 
-> [!NOTE]
-> The container serves the **Frontend UI at the same port as the Backend (5000)** when built via Docker.
+> 🟢 Backend running at `http://localhost:8000`
 
+### 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+> 🟢 Frontend running at `http://localhost:5173`
+
+### 4️⃣ Docker — Full Stack (Recommended)
+
+```bash
+docker-compose up -d --build
+```
+
+> 🟢 Full app at `http://localhost:5000`
+> Both React frontend and FastAPI backend are built into a **single multi-stage Docker image**.
 
 ---
 
-## **Configuration**
-
-Key environment variables in `.env`:
+## ⚙️ Configuration Reference
 
 | Variable | Description | Default |
-|----------|-------------|---------|
-| `APP_ENV` | Environment mode | development |
-| `GROQ_API_KEY` | Groq API key | required |
-| `LLM_MODEL` | LLM model name | openai/gpt-oss-120b |
-| `EMBEDDING_MODEL` | Embedding model | all-MiniLM-L6-v2 |
-| `CHUNK_SIZE` | Text chunk size | 1000 |
-| `CHUNK_OVERLAP` | Chunk overlap | 200 |
-| `RETRIEVAL_K` | Number of chunks to retrieve | 3 |
+|---|---|---|
+| `GROQ_API_KEY` | Groq API key *(required)* | — |
+| `APP_ENV` | Runtime environment | `development` |
+| `LLM_MODEL` | LLM model to use | `llama3-70b-8192` |
+| `EMBEDDING_MODEL` | HuggingFace embedding model | `all-MiniLM-L6-v2` |
+| `CHUNK_SIZE` | Characters per text chunk | `1000` |
+| `CHUNK_OVERLAP` | Overlap between adjacent chunks | `200` |
+| `RETRIEVAL_K` | Top-K chunks returned per query | `3` |
 
 ---
 
-## **API Endpoints**
+## 🌐 API Reference
 
 | Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/` | GET | Main web interface |
-| `/health` | GET | Health check |
-| `/docs` | GET | Swagger API documentation |
-| `/redoc` | GET | ReDoc API documentation |
-| `/api/process` | POST | Process query with document |
-| `/api/documents/count` | GET | Get document count |
-| `/api/documents/clear` | POST | Clear all documents |
+|---|---|---|
+| `/` | `GET` | Serves the web interface |
+| `/health` | `GET` | Health check |
+| `/docs` | `GET` | Interactive Swagger documentation |
+| `/redoc` | `GET` | ReDoc API documentation |
+| `/api/process` | `POST` | Submit a natural language query |
+| `/api/documents/count` | `GET` | Number of indexed document chunks |
+| `/api/documents/clear` | `POST` | Wipe the vector database |
+
+### Example Request
+
+```bash
+curl -X POST "https://namannanda-docmind-backend.hf.space/api/process" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "What are the key findings in the uploaded report?"}'
+```
 
 ---
 
-## **Usage**
+## 💡 How to Use
 
-1. **Upload a Document**: Choose PDF, DOCX, TXT, or paste URL/text
-2. **Click "Process Document"**: System creates embeddings
-3. **Ask Questions**: Chat with your document using natural language
-4. **Get AI Answers**: Responses include source (Document or Wikipedia)
+```
+1. 📤  Upload a Document   →  PDF, DOCX, TXT, or paste a URL
+2. ⚙️   Process             →  DocMind chunks & embeds your document
+3. 💬  Ask a Question      →  Type any natural language query
+4. 🧠  Get an AI Answer    →  Response cites source: Document or Wikipedia
+```
 
 ---
 
-## **Running Tests**
-
-### Backend Tests
-Navigate to the `backend` directory first:
+## 🧪 Testing
 
 ```bash
 cd backend
-```
 
-Then run the tests:
-
-```bash
 # Run all tests
 pytest tests/ -v
 
-# Run with coverage
+# Run with HTML coverage report
 pytest tests/ -v --cov=app --cov-report=html
 
 # Run async tests
 pytest tests/ -v --asyncio-mode=auto
 ```
 
----
+### Testing Strategy
 
-## **Testing Strategy & Quality Assurance**
-
-We employ a comprehensive testing strategy using **Pytest** and **unittest.mock** to ensure reliability and maintainability.
-
-### **1. Unit Testing (White-Box Testing)**
-- **Isolation**: Each component (Agents, Tools, Services) is tested in isolation.
-- **Mocking**: External dependencies (Groq API, ChromaDB, Wikipedia) are mocked to ensure tests are deterministic and do not require network access.
-- **Technique**: We use `patch` and `MagicMock` to simulate external behaviors and error conditions.
-
-### **2. Edge Case & Error Handling**
-- **Boundary Value Analysis**: Testing empty inputs, invalid file types, and large payloads.
-- **Exception Handling**: Verifying that the system gracefully handles API failures (e.g., LLM downtime) and raises appropriate custom exceptions.
-
-### **3. Integration Testing (Simulated)**
-- **Workflow Graph**: We test the entire LangGraph workflow by simulating state transitions between agents.
-- **API Endpoints**: Testing FastAPI routes with `TestClient` to ensure correct HTTP status codes and response schemas.
-
-### **4. Code Quality Metrics**
-- **100% Test Coverage**: Every line of code is executed during testing.
-- **Linting**: Strict adherence to **PEP 8** standards using `flake8`, `isort`, and `black`.
-- **Type Safety**: Pydantic models ensure runtime data validation.
+| Strategy | Approach |
+|---|---|
+| **Unit Testing** | All agents, services, and tools tested in isolation with `MagicMock` |
+| **Edge Cases** | Empty inputs, invalid file types, oversized payloads, LLM downtime |
+| **Integration** | Full LangGraph state transitions + FastAPI routes via `TestClient` |
+| **Code Quality** | `black`, `flake8`, `isort` — strict PEP 8 compliance |
+| **Coverage** | **100%** line coverage across the entire codebase |
 
 ---
 
-## **Log Management**
-
-The application uses a structured logging system for monitoring and debugging.
-
-- **Storage**: Logs are stored in `logs/app.log`.
-- **Rotation**: Automatic log rotation (10MB per file, keeping last 5 backups) prevents disk overflow.
-- **Format**: `YYYY-MM-DD HH:MM:SS - logger_name - LEVEL - [file:line] - message`
-- **Levels**: 
-  - `INFO`: General operational events (requests, state transitions).
-  - `DEBUG`: Detailed debugging information (only in development).
-  - `ERROR`: Exceptions and critical failures (stack traces included).
-
----
-
-## **Tech Stack**
-
-| Category | Technologies |
-|----------|--------------|
-| **Backend** | FastAPI, Uvicorn, Python 3.11 |
-| **AI/ML** | LangChain, LangGraph, Groq, HuggingFace |
-| **Database** | ChromaDB (Vector Store) |
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **DevOps** | Docker, Docker Compose, GitHub Actions |
-
----
-
-## **CI/CD Pipeline**
-
-This project uses **GitHub Actions** for continuous integration and deployment.
-
-### Pipeline Stages
+## 🔄 CI/CD Pipeline
 
 ```
-┌─────────┐    ┌─────────┐    ┌──────────┐    ┌─────────┐    ┌──────────┐
-│  Lint   │───▶│  Test   │───▶│ Security │───▶│  Build  │───▶│  Deploy  │
-│ (Black, │    │(pytest) │    │ (Safety, │    │(Docker) │    │ (Render) │
-│ Flake8) │    │         │    │  Bandit) │    │         │    │          │
-└─────────┘    └─────────┘    └──────────┘    └─────────┘    └──────────┘
+┌──────────┐   ┌──────────┐   ┌──────────────┐   ┌──────────┐   ┌──────────┐
+│   Lint   │──▶│   Test   │──▶│   Security   │──▶│  Build   │──▶│  Deploy  │
+│  black   │   │  pytest  │   │ Safety+Bandit│   │  Docker  │   │  Render  │
+│  flake8  │   │ 100% cov │   │   scanning   │   │  image   │   │          │
+└──────────┘   └──────────┘   └──────────────┘   └──────────┘   └──────────┘
 ```
 
-### Workflow Files
+| Workflow File | Trigger | Purpose |
+|---|---|---|
+| `ci-cd.yml` | Push / PR to `main` | Full lint → test → security → deploy pipeline |
+| `docker.yml` | Release published | Build & push image to GitHub Container Registry |
 
-| File | Trigger | Purpose |
-|------|---------|---------|
-| `ci-cd.yml` | Push/PR to main | Full CI/CD pipeline |
-| `docker.yml` | Release published | Build & push to GHCR |
-
-### Required Secrets
+**Required GitHub Secrets:**
 
 | Secret | Description |
-|--------|-------------|
-| `GROQ_API_KEY` | Groq API key for testing |
-| `RENDER_DEPLOY_HOOK` | Render deploy webhook URL |
+|---|---|
+| `GROQ_API_KEY` | Used during automated test runs |
+| `RENDER_DEPLOY_HOOK` | Webhook URL to trigger Render redeploy |
 
 ---
 
-## **Future Enhancements**
+## 📊 Log Management
 
-- [ ] Multilingual document ingestion
-- [ ] Audio document ingestion + Whisper
-- [ ] Long-term memory + history viewer
-- [ ] MongoDB/FAISS alternative for Chroma
-- [ ] More tools (WolframAlpha, SerpAPI)
-- [ ] Model selection dropdown (Gemini, LLaMA, GPT-4)
-- [ ] WebSocket for real-time streaming
-
----
-
-## **Author**
-
-**Md Emon Hasan**
-
-- Email: [emon.mlengineer@gmail.com](mailto:emon.mlengineer@gmail.com)
-- LinkedIn: [md-emon-hasan](https://www.linkedin.com/in/md-emon-hasan-695483237/)
-- GitHub: [Md-Emon-Hasan](https://github.com/Md-Emon-Hasan)
-- Facebook: [Md-Emon-Hasan](https://www.facebook.com/mdemon.hasan2001/)
-- WhatsApp: [+8801834363533](https://wa.me/8801834363533)
+| Property | Detail |
+|---|---|
+| **Location** | `backend/logs/app.log` |
+| **Rotation** | 10 MB per file · last 5 backups retained |
+| **Format** | `YYYY-MM-DD HH:MM:SS \| logger \| LEVEL \| [file:line] \| message` |
+| **INFO** | Operational events — requests, state transitions |
+| **DEBUG** | Verbose output — development mode only |
+| **ERROR** | Failures — full stack traces included |
 
 ---
 
-## **License**
+## 🗺️ Roadmap
 
-MIT License - see [LICENSE](LICENSE) file for details.
+- [ ] 🔄 Streaming LLM responses via WebSocket
+- [ ] 💾 Persistent vector storage across sessions
+- [ ] 🎙️ Audio ingestion via OpenAI Whisper
+- [ ] 👥 Multi-user document workspaces with access control
+- [ ] 💬 Persistent chat history & memory viewer
+- [ ] 🔌 Additional tools: WolframAlpha, SerpAPI, Arxiv, PubMed
+- [ ] 🤖 Model selector UI: Gemini, GPT-4, Mistral, LLaMA
+- [ ] 🌍 Multilingual document support
 
 ---
 
-## **Contributing**
+## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Here's how:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** your feature branch: `git checkout -b feature/amazing-feature`
+3. **Commit** your changes: `git commit -m 'Add amazing feature'`
+4. **Push** to the branch: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+Please ensure all new code passes `pytest` with 100% coverage before submitting.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### Built with ❤️ by [Naman Nanda](https://github.com/NeuroNaman)
+
+*Artificial Intelligence / Machine Learning Developer*
+
+[![GitHub](https://img.shields.io/badge/GitHub-NeuroNaman-181717?style=for-the-badge&logo=github)](https://github.com/NeuroNaman)
+
+<br/>
+
+⭐ **Found DocMind useful? A star goes a long way — thank you!** ⭐
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,14,20&height=100&section=footer)
+
+</div>
