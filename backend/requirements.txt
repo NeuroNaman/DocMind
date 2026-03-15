@@ -23,7 +23,7 @@ torch>=2.0.0
 
 # ChromaDB for VectorStore
 chromadb>=0.4.0
-
+langchain-chroma>=0.1.0
 # Data Validation
 pydantic>=2.0.0
 
