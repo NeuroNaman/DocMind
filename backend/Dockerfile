@@ -1,12 +1,12 @@
-# Use an official Python runtime as a parent image
+# Use Python 3.11
 FROM python:3.11-slim
 
-# Set environment variables
+# Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV APP_ENV=production
 
-# Set the working directory
+# Working directory
 WORKDIR /app
 
 # Install system dependencies
@@ -14,20 +14,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for better caching
+# Copy requirements
 COPY requirements.txt .
 
-# Install Python dependencies
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
+# Copy app
 COPY . .
 
-# Create necessary directories
+# Create required directories
 RUN mkdir -p uploads vector_db
 
-# Expose the port
-EXPOSE 5000
+# Expose Render default port
+EXPOSE 10000
 
-# Set the entrypoint
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000", "--workers", "2"]
+# Start FastAPI
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port $PORT --workers 2"]
